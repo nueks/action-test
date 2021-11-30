@@ -1,0 +1,23 @@
+# https://github.com/marketplace/actions/find-comment
+name: Find Comment Test
+
+on:
+  issue_comment:
+    types:
+    - created
+
+jobs:
+  job1:
+    name: test1
+    runs-on: ubuntu-latest
+    steps:
+    - name: Find Comment
+      uses: peter-evans/find-comment@v1
+      id: fc
+      with:
+        issue-number: 1
+        body-includes: "/test1"
+    - run: |
+        echo ${{ steps.fc.outputs.comment-id }}
+        echo ${{ steps.fc.outputs.comment-body }}
+        echo ${{ steps.fc.outputs.comment-author }}
