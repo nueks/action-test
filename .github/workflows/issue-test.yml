@@ -15,9 +15,12 @@ jobs:
       uses: peter-evans/find-comment@v1
       id: fc
       with:
+        token: ${{ secret.MY_GITHUB_TOKEN }}
         issue-number: 1
-        body-includes: "/test1"
+        body-includes: /test1
     - run: |
         echo ${{ steps.fc.outputs.comment-id }}
         echo ${{ steps.fc.outputs.comment-body }}
         echo ${{ steps.fc.outputs.comment-author }}
+        echo ${{ github.event.issue.number }}
+        
