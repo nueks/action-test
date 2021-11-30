@@ -18,7 +18,7 @@ jobs:
         token: ${{ secrets.MY_GITHUB_TOKEN }}
         issue-number: 1
         body-includes: /test1
-    - run: |
+      run: |
         echo ${{ steps.fc.outputs.comment-id }}
         echo ${{ steps.fc.outputs.comment-body }}
         echo ${{ steps.fc.outputs.comment-author }}
