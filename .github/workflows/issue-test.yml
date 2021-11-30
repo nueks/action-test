@@ -13,14 +13,14 @@ jobs:
     steps:
     - name: Find Comment
       uses: peter-evans/find-comment@v1
-      id: fc
+      id: fc1
       with:
-        token: ${{ secrets.MY_GITHUB_TOKEN }}
+        # token: ${{ secrets.MY_GITHUB_TOKEN }}
         issue-number: 1
         body-includes: /test1
-      run: |
-        echo ${{ steps.fc.outputs.comment-id }}
-        echo ${{ steps.fc.outputs.comment-body }}
-        echo ${{ steps.fc.outputs.comment-author }}
+    - run: |
+        echo ${{ steps.fc1.outputs.comment-id }}
+        echo ${{ steps.fc1.outputs.comment-body }}
+        echo ${{ steps.fc1.outputs.comment-author }}
         echo ${{ github.event.issue.number }}
         
