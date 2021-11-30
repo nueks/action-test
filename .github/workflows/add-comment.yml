@@ -1,9 +1,9 @@
-name: Add Comment
+name: Add Reaction
 
 on:
   repository_dispatch:
     types:
-    - add-reaction
+    - add-reaction-command
 
 jobs:
   example:
