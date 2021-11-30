@@ -17,7 +17,7 @@ jobs:
       with:
         # token: ${{ secrets.MY_GITHUB_TOKEN }}
         issue-number: 1
-        body-includes: /test1
+        body-includes: triger test1
     - run: |
         echo ${{ steps.fc1.outputs.comment-id }}
         echo ${{ steps.fc1.outputs.comment-body }}
