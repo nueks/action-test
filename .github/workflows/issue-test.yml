@@ -15,7 +15,7 @@ jobs:
       uses: peter-evans/find-comment@v1
       id: fc
       with:
-        token: ${{ secret.MY_GITHUB_TOKEN }}
+        token: ${{ secrets.MY_GITHUB_TOKEN }}
         issue-number: 1
         body-includes: /test1
     - run: |
