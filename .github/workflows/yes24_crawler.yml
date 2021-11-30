@@ -4,8 +4,8 @@
 name: yes24_crawler
 
 on:
-  schedule:                                                                                                                                                                                       
-    - cron: '0 10 * * *'
+  schedule:
+    - cron: '0 12 * * *'
 
 jobs:
   build:
@@ -20,12 +20,12 @@ jobs:
 
     - name: Install dependencies
       run: |
+        cd crawler
         python -m pip install --upgrade pip
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi                                                                                                                      
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - name: Run
       run: |
-        python crawling.py
+        python main.py
       env:
         MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
-

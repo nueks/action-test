@@ -47,8 +47,7 @@ if __name__ == "__main__":
     upload_contents = extract_book_data(soup)
     print(upload_contents)
 
-    access_token = "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"
-    # access_token = os.environ['MY_GITHUB_TOKEN']
+    access_token = os.environ['MY_GITHUB_TOKEN']
     repository_name = "action-test"
 
     g = Github(access_token)
